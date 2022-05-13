@@ -760,7 +760,7 @@ class LucidSonicDream:
 
     # Write temporary movie file
     print('\nGenerating movie...\n')
-    imageio.mimwrite('tmp.mp4', all_frames, quality=8, fps=self.sr/self.frame_duration)
+    imageio.mimwrite('tmp.mp4', np.array(all_frames[i, :, :, 0:3]), quality=8, fps=self.sr/self.frame_duration)
 
     # Write temporary audio file
     soundfile.write('tmp.wav',wav_output, sr_output)
